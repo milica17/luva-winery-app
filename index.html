@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L’Uva Winery App</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>L’Uva Winery 🍷</h1>
+    <nav>
+        <a href="#" onclick="showSection('hero')">Početna</a>
+        <a href="#" onclick="showSection('tour')">Ture</a>
+        <a href="#" onclick="showSection('shop')">Shop</a>
+        <a href="#" onclick="showSection('login')">Login</a>
+        <a href="#" onclick="goToCart()">Korpa</a>
+    </nav>
+</header>
+
+<!-- HERO / Početna -->
+<section id="hero" class="section active">
+    <h2>Experience the Art of Wine</h2>
+    <div class="buttons">
+        <button class="btn" onclick="showSection('tour')">Zakažite turu</button>
+        <button class="btn" onclick="showSection('shop')">Online Shop</button>
+    </div>
+</section>
+
+<!-- TURE / Schedule a Tour -->
+<section id="tour" class="section">
+    <h2>Zakazivanje ture</h2>
+    <input type="text" id="tour-name" placeholder="Vaše ime">
+    <input type="email" id="tour-email" placeholder="Vaš email">
+    <input type="tel" id="tour-phone" placeholder="Vaš broj telefona">
+    <input type="date" id="tour-date">
+    <button class="btn" onclick="sendTourEmail()">Pošalji zahtev</button>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="section">
+    <h2>Naša vina</h2>
+    <div class="shop">
+        <div class="wine-card">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3" alt="Cabernet Sauvignon">
+            <h3>Cabernet Sauvignon</h3>
+            <p>1800 RSD</p>
+            <button class="btn" onclick="addToCart('Cabernet Sauvignon')">Dodaj u korpu</button>
+        </div>
+        <div class="wine-card">
+            <img src="merlot.avif" alt="Merlot">
+            <h3>Merlot</h3>
+            <p>1600 RSD</p>
+            <button class="btn" onclick="addToCart('Merlot')">Dodaj u korpu</button>
+        </div>
+        <div class="wine-card">
+            <img src="char.jpg" alt="Chardonnay">
+            <h3>Chardonnay</h3>
+            <p>1500 RSD</p>
+            <button class="btn" onclick="addToCart('Chardonnay')">Dodaj u korpu</button>
+        </div>
+    </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="section">
+    <h2>Login</h2>
+    <div class="login">
+        <input type="text" id="username" placeholder="Korisničko ime">
+        <input type="password" id="password" placeholder="Lozinka">
+        <button class="btn" onclick="loginUser()">Prijavi se</button>
+    </div>
+    <p id="login-message"></p>
+</section>
+
+<!-- CHECKOUT / Korpa -->
+<section id="checkout" class="section">
+    <h2>Korpa / Check Out</h2>
+    <ul id="checkout-list"></ul>
+    <p id="checkout-total"></p>
+    <button class="btn" onclick="completeOrder()">Završi narudžbinu</button>
+</section>
+<div id="popup" class="popup">
+    <div class="popup-box">
+        <p id="popup-message"></p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+

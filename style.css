@@ -1,0 +1,74 @@
+/* GLOBAL */
+body{margin:0;font-family:Georgia,serif;background:#faf7f7;color:#333;}
+header{background:#4b0f1a;color:white;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:10px 15px;box-sizing:border-box;}
+header h1{font-size:20px;flex:1 1 100%;text-align:center;margin:5px 0;}
+nav{display:flex;flex:1 1 100%;justify-content:space-around;flex-wrap:wrap;}
+nav a{color:white;margin:5px 0;text-decoration:none;font-weight:bold;flex:1 1 auto;text-align:center;min-width:60px;}
+
+/* SECTIONS */
+.section{display:none;padding:40px 20px;}
+.section.active{display:block;animation:fadeIn 0.3s ease-in;}
+@keyframes fadeIn{from{opacity:0;} to{opacity:1;}}
+
+/* HERO */
+.buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-top:20px;}
+.btn{background:#8b1c2d;color:white;border:none;padding:12px 25px;border-radius:8px;cursor:pointer;transition:0.3s;}
+.btn:hover{background:#4b0f1a;transform:scale(1.05);}
+
+/* SHOP */
+.shop{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;justify-items:center;}
+.wine-card{background:white;border-radius:12px;padding:15px;text-align:center;box-shadow:0 10px 20px rgba(0,0,0,0.2);transition:0.3s;}
+.wine-card:hover{transform:translateY(-5px) scale(1.03);}
+.wine-card img{width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:10px;}
+
+/* LOGIN */
+.login{max-width:300px;margin:40px auto;display:flex;flex-direction:column;gap:15px;}
+.login input{padding:10px;border-radius:5px;border:1px solid #ccc;}
+
+/* FOOTER */
+footer{background:#4b0f1a;color:white;text-align:center;padding:15px;margin-top:20px;}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+    nav a{font-size:14px;margin:3px;}
+    .buttons{flex-direction:column;}
+    .wine-card img{height:180px;}
+}
+/* POPUP */
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.popup-box{
+    background:white;
+    width:80%;
+    max-width:320px;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.popup-box button{
+    margin-top:15px;
+    padding:10px 20px;
+    background:#8b1c2d;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.popup-box button:hover{
+    background:#4b0f1a;
+}
